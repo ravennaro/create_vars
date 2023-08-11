@@ -39,7 +39,14 @@ def mode(x):
     return pd.Series.mode(x).values[0]
 
 # %% ../nbs/00_create_vars.ipynb 13
-def create_vars_in_time(df_,id_cols,trns_time:str,ref_time:str,value_vars:list,window:list,operations:list):
+def create_vars_in_time(df_, # Dataframe
+                        id_cols, # Colunas de agrupamento como id e safra
+                        trns_time:str, # Data correspondente a variável 
+                        ref_time:str, # Data que será a referência para calcular as janelas de tempo 
+                        value_vars:list, # Lista das variáveis que serão calculadas as operações
+                        window:list, # Lista contendo a janela para calcular as variáveis 
+                        operations:list # Lista das operações a serem calculadas
+                        ): 
     
     df = df_.copy()
     df_spine =  df[id_cols].drop_duplicates()

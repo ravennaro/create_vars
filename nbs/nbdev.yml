@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "create_vars"
+  site-url: "https://ravennaro.github.io/create_vars"
+  description: "Create variables in time"
+  repo-branch: main
+  repo-url: "https://github.com/ravennaro/create_vars"

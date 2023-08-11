@@ -7,13 +7,16 @@ __all__ = ['verifica_tamanho', 'ajuste_tempo', 'mode', 'create_vars_in_time']
 from fastcore.test import *
 from fastcore.utils import *
 
+
+
+# %% ../nbs/00_create_vars.ipynb 4
 import pandas as pd
 
-# %% ../nbs/00_create_vars.ipynb 5
+# %% ../nbs/00_create_vars.ipynb 6
 def verifica_tamanho(valores, n):
     return all(len(str(valor)) == n for valor in valores)
 
-# %% ../nbs/00_create_vars.ipynb 7
+# %% ../nbs/00_create_vars.ipynb 8
 def ajuste_tempo(df_, trns_time:str, ref_time:str):    
 
     if verifica_tamanho(df_[trns_time], n=6):
@@ -35,11 +38,11 @@ def ajuste_tempo(df_, trns_time:str, ref_time:str):
 
     return df_
 
-# %% ../nbs/00_create_vars.ipynb 10
+# %% ../nbs/00_create_vars.ipynb 11
 def mode(x):
     return pd.Series.mode(x).values[0]
 
-# %% ../nbs/00_create_vars.ipynb 13
+# %% ../nbs/00_create_vars.ipynb 14
 def create_vars_in_time(df_,id_cols,trns_time:str,ref_time:str,value_vars:list,window:list,operations:list):
     
     df = df_.copy()

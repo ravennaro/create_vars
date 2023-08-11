@@ -5,5 +5,7 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://ravennaro.github.io',
                 'git_url': 'https://github.com/ravennaro/create_vars',
                 'lib_path': 'create_vars'},
-  'syms': { 'create_vars.vars': { 'create_vars.vars.create_vars_in_time': ('create_vars.html#create_vars_in_time', 'create_vars/vars.py'),
-                                  'create_vars.vars.mode': ('create_vars.html#mode', 'create_vars/vars.py')}}}
+  'syms': { 'create_vars.vars': { 'create_vars.vars.ajuste_tempo': ('create_vars.html#ajuste_tempo', 'create_vars/vars.py'),
+                                  'create_vars.vars.create_vars_in_time': ('create_vars.html#create_vars_in_time', 'create_vars/vars.py'),
+                                  'create_vars.vars.mode': ('create_vars.html#mode', 'create_vars/vars.py'),
+                                  'create_vars.vars.verifica_tamanho': ('create_vars.html#verifica_tamanho', 'create_vars/vars.py')}}}

@@ -57,11 +57,11 @@ df.head()
 
 |     | ID_cliente | Safra  | Feat_cat | Feat_num1 | Feat_num2 |
 |-----|------------|--------|----------|-----------|-----------|
-| 0   | 57         | 202212 | A        | 3         | 33        |
-| 1   | 70         | 202212 | C        | 46        | 5         |
-| 2   | 81         | 202209 | C        | 64        | 0         |
-| 3   | 88         | 202306 | B        | 53        | 7         |
-| 4   | 27         | 202306 | B        | 24        | 60        |
+| 0   | 75         | 202207 | A        | 72        | 66        |
+| 1   | 30         | 202209 | B        | 44        | 90        |
+| 2   | 70         | 202301 | B        | 82        | 33        |
+| 3   | 76         | 202302 | A        | 37        | 70        |
+| 4   | 81         | 202305 | C        | 76        | 17        |
 
 </div>
 
@@ -73,18 +73,18 @@ df.groupby('ID_cliente')['Safra'].value_counts().sort_values(ascending=False)
 ```
 
     ID_cliente  Safra 
-    53          202207    2
-    44          202207    2
-    53          202301    2
-    77          202305    2
-    65          202209    2
+    11          202207    2
+    70          202301    2
+    3           202305    1
+    73          202209    1
+    79          202207    1
                          ..
-    32          202302    1
-    31          202302    1
-    30          202207    1
-                202209    1
-    99          202305    1
-    Name: count, Length: 91, dtype: int64
+    35          202302    1
+    34          202305    1
+                202306    1
+    33          202306    1
+    99          202306    1
+    Name: count, Length: 98, dtype: int64
 
 A safra corresponde a data que cada variável foi calculada. Ela precisa
 estar no formato YYYYMM ou YYYYMMDD. Para o nosso exemplo teremos a
@@ -95,13 +95,13 @@ df['Safra'].value_counts().sort_index()
 ```
 
     Safra
-    202207    22
-    202209    15
-    202212    10
-    202301    14
-    202302    13
+    202207    23
+    202209    12
+    202212     5
+    202301    13
+    202302    15
     202305    15
-    202306    11
+    202306    17
     Name: count, dtype: int64
 
 ### Safra de ref
@@ -152,11 +152,11 @@ df_vars_num.head()
 
 |     | ID_cliente | Safra  | Feat_num1_sum_1M | Feat_num1_mean_1M | Feat_num1_count_1M | Feat_num1_sum_2M | Feat_num1_mean_2M | Feat_num1_count_2M | Feat_num1_sum_3M | Feat_num1_mean_3M | ... | Feat_num2_count_6M | Feat_num2_sum_9M | Feat_num2_mean_9M | Feat_num2_count_9M | Feat_num2_sum_12M | Feat_num2_mean_12M | Feat_num2_count_12M | Feat_num2_sum_15M | Feat_num2_mean_15M | Feat_num2_count_15M |
 |-----|------------|--------|------------------|-------------------|--------------------|------------------|-------------------|--------------------|------------------|-------------------|-----|--------------------|------------------|-------------------|--------------------|-------------------|--------------------|---------------------|-------------------|--------------------|---------------------|
-| 0   | 57         | 202212 | NaN              | NaN               | NaN                | NaN              | NaN               | NaN                | NaN              | NaN               | ... | NaN                | 33.0             | 33.0              | 1.0                | 33.0              | 33.0               | 1.0                 | 33                | 33.0               | 1                   |
-| 1   | 70         | 202212 | NaN              | NaN               | NaN                | NaN              | NaN               | NaN                | NaN              | NaN               | ... | NaN                | 27.0             | 13.5              | 2.0                | 27.0              | 13.5               | 2.0                 | 27                | 13.5               | 2                   |
-| 2   | 81         | 202209 | NaN              | NaN               | NaN                | NaN              | NaN               | NaN                | NaN              | NaN               | ... | NaN                | NaN              | NaN               | NaN                | 0.0               | 0.0                | 1.0                 | 0                 | 0.0                | 1                   |
-| 3   | 88         | 202306 | NaN              | NaN               | NaN                | 53.0             | 53.0              | 1.0                | 53.0             | 53.0              | ... | 1.0                | 7.0              | 7.0               | 1.0                | 7.0               | 7.0                | 1.0                 | 7                 | 7.0                | 1                   |
-| 4   | 27         | 202306 | NaN              | NaN               | NaN                | 24.0             | 24.0              | 1.0                | 24.0             | 24.0              | ... | 1.0                | 60.0             | 60.0              | 1.0                | 60.0              | 60.0               | 1.0                 | 60                | 60.0               | 1                   |
+| 0   | 75         | 202207 | NaN              | NaN               | NaN                | NaN              | NaN               | NaN                | NaN              | NaN               | ... | NaN                | NaN              | NaN               | NaN                | NaN               | NaN                | NaN                 | 66                | 66.0               | 1                   |
+| 1   | 30         | 202209 | NaN              | NaN               | NaN                | NaN              | NaN               | NaN                | NaN              | NaN               | ... | NaN                | NaN              | NaN               | NaN                | 90.0              | 90.0               | 1.0                 | 90                | 90.0               | 1                   |
+| 2   | 70         | 202301 | NaN              | NaN               | NaN                | NaN              | NaN               | NaN                | NaN              | NaN               | ... | NaN                | 111.0            | 55.5              | 2.0                | 111.0             | 55.5               | 2.0                 | 111               | 55.5               | 2                   |
+| 3   | 76         | 202302 | NaN              | NaN               | NaN                | NaN              | NaN               | NaN                | NaN              | NaN               | ... | 1.0                | 70.0             | 70.0              | 1.0                | 70.0              | 70.0               | 1.0                 | 70                | 70.0               | 1                   |
+| 4   | 81         | 202305 | NaN              | NaN               | NaN                | NaN              | NaN               | NaN                | 76.0             | 76.0              | ... | 1.0                | 17.0             | 17.0              | 1.0                | 17.0              | 17.0               | 1.0                 | 17                | 17.0               | 1                   |
 
 <p>5 rows × 44 columns</p>
 </div>
@@ -195,10 +195,10 @@ df_vars_cat.head()
 
 |     | ID_cliente | Safra  | Feat_cat_nunique_1M | Feat_cat_mode_1M | Feat_cat_nunique_2M | Feat_cat_mode_2M | Feat_cat_nunique_3M | Feat_cat_mode_3M | Feat_cat_nunique_6M | Feat_cat_mode_6M | Feat_cat_nunique_9M | Feat_cat_mode_9M | Feat_cat_nunique_12M | Feat_cat_mode_12M | Feat_cat_nunique_15M | Feat_cat_mode_15M |
 |-----|------------|--------|---------------------|------------------|---------------------|------------------|---------------------|------------------|---------------------|------------------|---------------------|------------------|----------------------|-------------------|----------------------|-------------------|
-| 0   | 57         | 202212 | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | 1.0                 | A                | 1.0                  | A                 | 1                    | A                 |
-| 1   | 70         | 202212 | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | 2.0                 | A                | 2.0                  | A                 | 2                    | A                 |
-| 2   | 81         | 202209 | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | 1.0                  | C                 | 1                    | C                 |
-| 3   | 88         | 202306 | NaN                 | NaN              | 1.0                 | B                | 1.0                 | B                | 1.0                 | B                | 1.0                 | B                | 1.0                  | B                 | 1                    | B                 |
-| 4   | 27         | 202306 | NaN                 | NaN              | 1.0                 | B                | 1.0                 | B                | 1.0                 | B                | 1.0                 | B                | 1.0                  | B                 | 1                    | B                 |
+| 0   | 75         | 202207 | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                  | NaN               | 1                    | A                 |
+| 1   | 30         | 202209 | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | 1.0                  | B                 | 1                    | B                 |
+| 2   | 70         | 202301 | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | 2.0                 | A                | 2.0                  | A                 | 2                    | A                 |
+| 3   | 76         | 202302 | NaN                 | NaN              | NaN                 | NaN              | NaN                 | NaN              | 1.0                 | A                | 1.0                 | A                | 1.0                  | A                 | 1                    | A                 |
+| 4   | 81         | 202305 | NaN                 | NaN              | NaN                 | NaN              | 1.0                 | C                | 1.0                 | C                | 1.0                 | C                | 1.0                  | C                 | 1                    | C                 |
 
 </div>

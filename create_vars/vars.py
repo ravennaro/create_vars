@@ -7,8 +7,6 @@ __all__ = ['verifica_tamanho', 'ajuste_tempo', 'mode', 'create_vars_in_time']
 from fastcore.test import *
 from fastcore.utils import *
 
-
-
 # %% ../nbs/00_create_vars.ipynb 4
 import pandas as pd
 

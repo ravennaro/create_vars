@@ -2,8 +2,8 @@ project:
   output-dir: _docs
 
 website:
-  title: "create_vars"
-  site-url: "https://ravennaro.github.io/create_vars"
+  title: "featime"
+  site-url: "https://ravennaro.github.io/featime"
   description: "Create variables in time"
   repo-branch: main
-  repo-url: "https://github.com/ravennaro/create_vars"
+  repo-url: "https://github.com/ravennaro/featime"
